@@ -37,7 +37,7 @@ function orderByYear(moviesArray) {
             return -1;  // Why isn't it 1?
         }
         if (a.year === b.year) {
-            if(a.title > b.title) {
+            if (a.title > b.title) {
                 return 1;
             }
             if (a.title < b.title) {
