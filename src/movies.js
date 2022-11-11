@@ -30,23 +30,23 @@ function dramaMoviesScore(moviesArray) {
 function orderByYear(moviesArray) {
     const yearlyOrderedMovies = JSON.parse(JSON.stringify(moviesArray));
     yearlyOrderedMovies.sort((a,b) => {
-       if (a.year > b.year) {
-        return 1;   // Why isn't it -1?
-       }
-       if (a.year < b.year) {
-        return -1;  // Why isn't it 1?
-       }
-       if (a.year === b.year) {
-        if(a.title > b.title) {
-            return 1;
+        if (a.year > b.year) {
+            return 1;   // Why isn't it -1?
         }
-        if (a.title < b.title) {
-            return -1;
+        if (a.year < b.year) {
+            return -1;  // Why isn't it 1?
         }
-        if(a.title === b.title) {
-            return 0;
+        if (a.year === b.year) {
+            if(a.title > b.title) {
+                return 1;
+            }
+            if (a.title < b.title) {
+                return -1;
+            }
+            if (a.title === b.title) {
+                return 0;
+            }
         }
-       }
     });
     return yearlyOrderedMovies;
 }
